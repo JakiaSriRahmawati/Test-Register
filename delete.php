@@ -1,4 +1,5 @@
 <?php
+require('koneksi.php');
 $kode = $_GET ['id'];
 
 $sql = mysqli_query($koneksi, "DELETE FROM custemer where id= '$kode'");
