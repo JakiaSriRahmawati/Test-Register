@@ -39,15 +39,28 @@
     <a href="tambah.php" class="button">
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Add Icon" class="icon">Tambah</a>    
 </div>
-    <table>
-        <thead>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>No Hp</th>
+            <th>Actions</th>
+        </tr>
+        <?php
+        include "koneksi.php";
+        $id=1;
+        $ambildata = mysqli_query($koneksi, "SELECT name, email, phone FROM user");
+        while ($tampil = mysqli_fetch_array($ambildata)){
+            echo "
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>No Hp</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+            <td>$name</td>
+            <td>$tampil[name]</td>
+            <td>$tampil[email]</td>
+            <td>$tampil[phone]</td>
+            </tr>";
+            $name++;
+        }
+        ?>
         <tbody>
             <?php
             // Contoh data array

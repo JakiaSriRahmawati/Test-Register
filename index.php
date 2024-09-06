@@ -8,7 +8,7 @@
 </head>
 <body>
         <h1>Your Details</h1>
-    <form action="" method="post">
+    <form action="koneksi.php" method="post">
         <ul>
                 <p>1. <label for="nama">Name :</label>
                 <input type="text" id="nama" name="nama" placeholder="Enter your name" required>
