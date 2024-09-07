@@ -42,7 +42,6 @@
             align-items: center;
             gap: 5px;
             text-decoration: none;
-            /* color: black; */
         }
         .btn-delete {
             background-color: red;
@@ -52,7 +51,6 @@
             align-items: center;
             gap: 5px;
             text-decoration: none;
-            /* color: white; */
         }
         .btn-edit img, .btn-delete img {
             width: 15px;
@@ -63,9 +61,10 @@
 <body>
     <h2>Employe <strong>Details</strong></h2>
     <div class="col-md-8">
-    <a href="tambah.php" class="button">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Add Icon" class="icon">Tambah</a>    
-</div>
+        <a href="tambah.php" class="button">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Add Icon" class="icon"> Tambah
+        </a>    
+    </div>
     <table border="1">
         <tr>
             <th>Name</th>
@@ -73,32 +72,22 @@
             <th>No Hp</th>
             <th>Actions</th>
         </tr>
-        
         <tbody>
-            <?php
-            $data = [
-                ['id'=>1, 'name' => 'Jek', 'email' => 'jek@gmail.com', 'phone' => '+62 812-9876-7890'],
-                ['id'=>2, 'name' => 'Jakia', 'email' => 'jakia@gmail.com', 'phone' => '+62 813-5678-0977'],
-                ['id'=>3, 'name' => 'Zakai', 'email' => 'zakai@gmail.com', 'phone' => '+62 786-2345-6789'],
-            ];
-
-        
-            foreach ($data as $row) {
-                echo "<tr>";
-                echo "<td>" . $row['name'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['phone'] . "</td>";
-                echo "<td class='actions'>
-                <a href='edit.php?id=" . $row['id'] . "' title='Edit' class='btn-edit'>
-                        <img class='icon' src='https://cdn-icons-png.flaticon.com/512/1159/1159633.png' alt='Edit'>
-                    </a>
-                    <a href='delete.php?id=" . $row['id'] . "' title='Delete' class='btn-delete' onclick='return confirm(\"Are you sure you want to delete this item?\");'>
-                        <img class='icon' src='https://cdn-icons-png.flaticon.com/512/1214/1214428.png' alt='Delete'>
-                    </a>
-              </td>";
-        echo "</tr>";
-            }
-            ?>
+            <tr>
+                <td><?php echo $_POST['name']; ?></td>
+                <td><?php echo $_POST['email']; ?></td>
+                <td><?php echo $_POST['phone']; ?></td>
+                <td>
+                    <div class="actions">
+                        <a href="edit.php?id=<?php echo $row['id']; ?>" title="Edit" class="btn-edit">
+                            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Edit">
+                        </a>
+                        <a href="delete.php?id=<?php echo $row['id']; ?>" title="Delete" class="btn-delete" onclick="return confirm('Are you sure you want to delete this item?');">
+                            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Delete">
+                        </a>
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>

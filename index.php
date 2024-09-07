@@ -36,12 +36,12 @@
             padding: 10px;
             box-sizing: border-box;
         }
-    </style>
+    </style>    
 </head>
 <body>
     <fieldset>
         <legend>Your Details</legend>
-    <form action="koneksi.php" method="post">
+    <form action="" method="POST">
         <ul>
                 <p>1. <label for="nama">Name :</label>
                 <input type="text" id="nama" name="nama" placeholder="Enter your name" required>
@@ -98,5 +98,12 @@
         <fieldset>
             <button type="submit">Buy it!!</button>
         </fieldset>
+        <script>
+    function redirectAfterSubmit() {
+        setTimeout(function() {
+            window.location.href = 'tabel.php';
+        }, 500); // Redirect setelah 500ms
+    }
+</script>
 </body>
 </html>
